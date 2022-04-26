@@ -1,10 +1,9 @@
 
-# kubernetes (k8s) high availability cluster configuration with Vagrant and VirtualBox
+# Kubernetes (k8s) high availability cluster configuration with kubeadm, Vagrant and VirtualBox
 ------
 
 ## Description
 
-------
 
 This set of configuration code will enable you to quickly provision a working kubernetes cluster.
 The k8s cluster is constructed with kubeadm and utilizes docker containers and calico networking framework.
@@ -20,9 +19,9 @@ Those are related to specific internal Vagrant networking which conflicts with t
 It is important to be aware of it.
 
 ## Getting started
-------
+
 ### Dependencies
-------
+
 The configuration has been run and tested on: 
 
 * MacOS 10.12.6
@@ -32,7 +31,7 @@ The configuration has been run and tested on:
 * Vagrant 2.2.19
 
 ### Installing
-------
+
 1. Create IP pool for calico networking framework.
 ```
     vagrant/calico.yaml
@@ -197,13 +196,13 @@ In this case k8s-cp2 192.168.0.42
     # after permorming cp request eg. kubectl get po -A
 ```
 ### Scripts.
-------
+
 In the directory k8s_vagrant/scripts you will find scripts which help to manage taking and removing snapshots. 
 I have created those as the k8s cluster experimentations can cause damage to the configurations.
 Easiest way is just to rollback to the working state by restoring snapshots.
 
 ### Provisioning.
-------
+
   **Important**
 
 After the initial provisioning deployment the cluster nodes need to be started without provision flag.
@@ -234,6 +233,15 @@ Set of commands aliases which will enable you to quickly provision and perform b
     # Start the cluster or an instance
     alias vup='vagrant --no-provision up'
 ```
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+This project has been inspired by [Liz Rice](https://github.com/lizrice) article: [Kubernetes in Vagrant with kubeadm](https://medium.com/@lizrice/kubernetes-in-vagrant-with-kubeadm-21979ded6c63)   
+
 
 
 

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd ..
+
+vagrant snapshot list
+
+echo ""
+read -r -p "Enter name of snapshot to delete: " snap_name;
+if [ ! -z $snap_name ] 
+then
+	for i in k8s-ha-proxy k8s-cp k8s-cp1 k8s-cp2 k8s-worker; 
+		do
+		vagrant snapshot delete $i $snap_name
+  		done
+fi

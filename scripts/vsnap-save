@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# vsnap-save takes a snapshot of the current state of the VirtualBox VM instances.
+# At this moment it is hard coded for the use with this configuration Vagrant instances.
+
+cd ..
+
+help_and_exit() {
+  local retval=${1:-1}
+  cat <<EOF
+  Usage: 
+    vsnap-save-cluster <snapshot_name>
+EOF
+  exit "$retval"
+}
+
+take_snap(){
+rnd_nr=$RANDOM
+for i in k8s-ha-proxy k8s-cp k8s-cp1 k8s-cp2 k8s-worker; do
+        Vagrant snapshot save $i snapshot_${args[0]}_$(date '+%Y%m%d').$rnd_nr
+        done
+
+        vagrant snapshot list
+}
+
+args=( )
+dry_run=0; xfer=0
+while (( $# )); do
+  case $1 in
+    *) args+=( "$1" ) ;;
+  esac
+  shift
+done
+set -- "${args[@]}"
+if [ ! -z ${args[0]} ] 
+	then
+	take_snap
+	else
+	echo "Snapshoot <name> argument not provided."
+	echo "Usage:"
+	echo "vsnap-save <snapshot_name>"
+fi

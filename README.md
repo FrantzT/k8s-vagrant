@@ -240,7 +240,7 @@ This project is licensed under the [NAME HERE] License - see the LICENSE.md file
 
 ## Acknowledgments
 
-This project has been inspired by [Liz Rice](https://github.com/lizrice) article: [Kubernetes in Vagrant with kubeadm](https://medium.com/@lizrice/kubernetes-in-vagrant-with-kubeadm-21979ded6c63)   
+This project has been inspired by [Liz Rice](https://github.com/lizrice) article: [Kubernetes in Vagrant with kubeadm](https://medium.com/@lizrice/kubernetes-in-vagrant-with-kubeadm-21979ded6c63).
 
 
 

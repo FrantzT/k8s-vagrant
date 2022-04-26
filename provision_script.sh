@@ -50,14 +50,11 @@ if [ $NODENAME = "k8s-cp" ]
 
     cat /etc/hosts
 
-    # cp -v /vagrant/kubeadm-config.yaml /home/vagrant/ && echo "cp -v /vagrant/kubeadm-config.yaml /home/vagrant/ - DONE" || echo "cp -v /vagrant/kubeadm-config.yaml /home/vagrant/ - FAIL"
-
     # Initialize custer
 
     kubeadm init --control-plane-endpoint=k8s-cp --apiserver-advertise-address=$IPADDR --apiserver-cert-extra-sans=k8s-cp --node-name k8s-cp --pod-network-cidr=10.1.0.0/16 | tee kubeadm-init.out
     
     # Set up admin creds for the vagrant user
-    #echo Copying credentials to /home/vagrant...
 
     sudo --user=vagrant mkdir -p /home/vagrant/.kube && echo "mkdir -p /home/vagrant/.kube - DONE" || echo "mkdir -p /home/vagrant/.kube - FAIL"
 

@@ -8,9 +8,9 @@
 This set of configuration code will enable you to quickly provision a working kubernetes cluster.
 The k8s cluster is constructed with kubeadm and utilizes docker containers and calico networking framework.
 The idea for the configuration is inspired by the Linux Foundation LFS258 Kubernetes Foundation training.
-This configuration has been used to perform all the lab exercise and as such has been tested as fully functional.
-The configuration is focused on building high availability cluster control plane with 3 working nodes running cluster of ectd databases.
-However the ha-proxy configuration can be omitted to have the configuration which is a base for the LFS258 training.
+This configuration has been used to perform all the lab exercises and as such has been tested as fully functional.
+The configuration is focused on building high availability cluster control plane with 3 working nodes running cluster of etcd databases.
+However the ha-proxy configuration can be omitted to have the base setup for the LFS258 training.
 Once the Vagrant boxes are provisioned and the cluster configuration is completed you can start up and halt the cluster using standard Vagrant commands.
 You will find explanation to elements of the configuration as comments included in the files.
 

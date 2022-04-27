@@ -197,7 +197,7 @@ In this case k8s-cp2 192.168.0.42
 ```
 ### Scripts.
 
-In the directory k8s_vagrant/scripts you will find scripts which help to manage taking and removing snapshots. 
+In the directory k8s-vagrant/scripts you will find scripts which help to manage taking and removing snapshots. 
 I have created those as the k8s cluster experimentations can cause damage to the configurations.
 Easiest way is just to rollback to the working state by restoring snapshots.
 
